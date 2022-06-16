@@ -17,7 +17,7 @@ func HTTP(w http.ResponseWriter, r *http.Request) {
 	// request is by a human
 	buf, _ := ioutil.ReadAll(r.Body)
 	if len(buf) >= 1 {
-		fmt.Println(fmt.Sprintf("probe request: %s", string(buf)))
+		fmt.Printf("probe request: %s\n", string(buf))
 	}
 
 	// get response
@@ -29,9 +29,8 @@ func HTTP(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	_, err := w.Write(j)
 	if err != nil {
-		fmt.Println(fmt.Sprintf("write failed: %v", err))
+		fmt.Printf("write failed: %v\n", err)
 	}
-	return
 }
 
 // Probe do the response

@@ -3,12 +3,13 @@ package probe_test
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/keloran/go-probe"
-	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
 	"net/http/httptest"
 	"testing"
+
+	"github.com/keloran/go-probe"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestProbe(t *testing.T) {
@@ -32,7 +33,7 @@ func TestProbe(t *testing.T) {
 }
 
 func TestHTTP(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		expect probe.Healthy
 	}{
 		{
